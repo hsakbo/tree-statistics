@@ -88,15 +88,17 @@ void normal(std::vector<int> arr)
 {
   
   srand(time(NULL));
-   
-  root->data = arr[0];
+
+  int r = rand() % arr.size();
+  
+  root->data = arr[r];
   root->left = NULL;
   root->right = NULL;
-  arr.erase(arr.begin());
+  arr.erase(arr.begin()+r);
       
   while(!arr.empty())
     {
-      int r = rand() % arr.size();
+      r = rand() % arr.size();
       rec2(root, arr[r]);
       arr.erase(arr.begin()+r);
            

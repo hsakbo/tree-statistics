@@ -18,6 +18,8 @@ int main(int argc, char **argv)
   
   char buf[100];
   int temp;
+
+  int total = 0;
   
   
   while(!feof(fp))
@@ -35,6 +37,8 @@ int main(int argc, char **argv)
       else
 	seen.emplace(temp, 1);
       buf[0] = 0;
+
+      total++;
     }
 
 
@@ -44,6 +48,9 @@ int main(int argc, char **argv)
     {
       cout<< it->first << "\t" << it->second <<endl;
     }
+
+  cout <<endl;
+  cout << "total: " <<total << endl;
   
   /* c++ map use
   seen.emplace(10, 2);
